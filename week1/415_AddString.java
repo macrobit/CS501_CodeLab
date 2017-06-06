@@ -3,17 +3,18 @@ import java.lang.StringBuilder;
 class Solution {
 public:
     String addStrings(String num1, String num2) {
-        /*if(num1 == null || num2 == null) {
+        if(num1 == null || num2 == null) {
             return "";
-        }*/
-        
+        }
+
         if(num1.length() == 0) {
-            return num2;
+            if(num2.length() == 0) {
+                return "";
+            } else {
+                return num2;
+            }
         }
-        
-        if(num2.length() == 0) {
-            return num1;
-        }
+ 
         
         StringBuilder res = new StringBuilder();
         int carry = 0;
