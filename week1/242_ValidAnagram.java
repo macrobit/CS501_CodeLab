@@ -41,9 +41,7 @@ public boolean isAnagram(String s, String t) {
 	for(int cur : map) {
 		if (cur != 0) {
 			return false;
-		} else {
-			return;
-		}
+		} 
 	}
 
 	return true;
