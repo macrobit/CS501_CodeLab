@@ -18,7 +18,7 @@
 	// What if the inputs contain unicode characters? How would you adapt your solution to such case?
 	// What if the length of these two strings are very big?
 
-
+// Using int array
 public boolean isAnagram(String s, String t) {
 	// Corner Case 1: two strings are the same
 	if(s.equals(t)) {
@@ -47,3 +47,33 @@ public boolean isAnagram(String s, String t) {
 	return true;
 }
 
+// Using Hash Table
+public boolean isAnagram(String s, String t) {
+
+	if (s.equals(t)) {
+		return true;
+	}
+
+	if (s.length() != t.length()) {
+		return false;
+	}
+
+	Map<Character, Integer> map = new HashMap<>();
+
+	for(int i = 0; i < s.length(); i++){
+		map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
+		map.put(t.charAt(i), map.getOrDefault(t.charAt(i), 0) - 1);
+	}
+
+	for(int cur : map.values()) {
+		if(cur != 0){
+			return false;
+		}
+	}
+	return true;
+}
+
+
+	}
+	}
+}
