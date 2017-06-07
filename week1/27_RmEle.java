@@ -20,7 +20,7 @@ public class Solution {
 			return 0;
 		}
 
-		// Use dual indexes, head is used only for 
+		// Use dual indexes, head is used only for result array
 		int head = 0;
 
 		for(int i = 0; i < nums.length; i++) {
