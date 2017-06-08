@@ -1,0 +1,34 @@
+
+/* This document records all the API used in week1  CodeLab */
+
+1. StringBuilder
+	
+	StringBuilder is a class compatible with StringBuffer, but without guarantee of synchronization. It is frequently used to append or insert a string 
+	to a existing string. Because String instance cannot be modified, if you want to use "+" symbol to realize appending, a new String instance have to 
+	be created, which will allocate another piece of memory space. By using StirngBuilder class and its API, you just need to apply for one part of space
+	and modify this part of space directly.
+
+	StringBuilder res = new StringBuilder(String str);
+
+	StringBuilder append(any primitive): Appends the string representation of the argument to this sequence.
+	StringBuilder insert(int offset, any primitive): Insert the string representation of the argument into sequence[offset] location.
+	StringBuilder reverse(): Causes this character sequence to be replaced by the reverse of the sequence.
+	String toString(): Returns a string representing the data in this sequence.
+
+2. String
+
+	boolean equals(String str):
+
+3. Array
+	
+	String toString(Object[] a): Returns a string representation of the specified array.
+	String deepToString(Object[] a): Returns a string representation of the "deep contents" of the specified array.
+
+
+
+4. HashMap
+	
+	V put(key, value): Associate a specified value to a specified key in this map.
+	V get(Object key): Return the value which key is mapped to.
+	V getOrDefault(Value, default_value): search the given value, if it is not found, set a default value.
+	Collection<V> values():
