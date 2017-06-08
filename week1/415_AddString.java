@@ -1,7 +1,6 @@
 import java.lang.StringBuilder;
 
-class Solution {
-public:
+public class Solution {
     String addStrings(String num1, String num2) {
         if(num1 == null || num2 == null) {
             return "";
