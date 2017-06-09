@@ -27,8 +27,10 @@
 	String deepToString(Object[] a): Returns a string representation of the "deep contents" of the specified array.
 
 
+4. List
 
-4. HashMap
+
+5. HashMap
 	
 	V put(key, value): Associate a specified value to a specified key in this map.
 	V get(Object key): Return the value which key is mapped to.
