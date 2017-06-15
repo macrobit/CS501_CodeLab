@@ -32,19 +32,29 @@ public class Solution {
         int left = 0;
         int right = 0;
         
-        while(right < n) {
-            // right must be in the right
-            if(str[right] != ' ' || right < left) {
-                right++;
-            }else {
-                left = ++right;
-                // Skip spaces, left must not be space!
-                while(left < n && str[left] == ' ') {
-                    left++;
-                }
-            }
+        while(left < n) {
+            // // right must be in the right
+            // if(str[right] != ' ' || right < left) {
+            //     right++;
+            // }else {
+            //     left = ++right;
+            //     // Skip spaces, left must not be space!
+            //     while(left < n && str[left] == ' ') {
+            //         left++;
+            //     }
+            // }
             
-            reverse(str, left, right-1); // Revere each word
+            // reverse(str, left, right-1); // Revere each word
+        	// The sequence is import. Left must be in front of Right
+            while(left < n && str[left] == ' ' || left < right) {
+            	left++;
+            }
+
+            while(right < n && str[right] != ' ' || right < left) {
+            	right++;
+            }
+
+            reverse(str, left, right - 1);
         }
         
         //Third, clean spaces in place
@@ -83,7 +93,3 @@ public class Solution {
     }
 }
 
-// Wrong Answer:
-// Input:		"hi!"
-// Output: 		"h!i"
-// Expected: 	"hi!"
