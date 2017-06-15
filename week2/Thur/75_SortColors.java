@@ -14,3 +14,83 @@ First, iterate the array counting number of 0's, 1's, and 2's, then overwrite ar
 
 Could you come up with an one-pass algorithm using only constant space?
 */
+
+public class Solution {
+	// two-pass algorithm using counting sort
+	public void sortColors(int[] nums) {
+		//Corner Case
+		if(nums == null || nums.length == 0) {
+			return;
+		}
+
+		int[] counter = new int[3];
+
+		for(int i = 0; i < nums.length; i++) {
+			counter[nums[i]]++;
+		}
+
+		for(int i = 0; i < nums.length; i++) {
+			if(i < counter[0]) {
+				nums[i] = 0;
+			}
+
+			if(i >= counter[0] && i < counter[0] + counter[1]) {
+				nums[i] = 1;
+			}
+
+			if(i >= counter[0] + counter[1] && i < n) {
+				nums[i] = 2;
+			}
+		}
+
+		return;
+	}
+
+	// two-pointer algorithm using head and end pointers.
+	public void sortColors(int[] nums) {
+		//Corner Case
+		if(nums == null || nums.length == 0) {
+			return;
+		}
+
+		int len = nums.length;
+		int head = 0;
+		int end = len - 1;
+
+		for(int i = 0; i < len; i++) {
+			// First check 0.
+			if(nums[i] == 0) {
+				swap(nums, head, i);
+				head++;
+			}
+			// Then check 2. 
+			if(nums[i] == 2) {
+				swap(nums, end, i);
+				end--;
+				i--; // After swapping, the swapped end elem may miss the check!!!
+			}
+		}
+
+		return;
+	}
+
+	// one-pass algorithm using only constant space?
+	public void sortColors(int[] nums) {
+		//Corner Case
+		if(nums == null || nums.length == 0) {
+			return;
+		}
+
+		
+	}
+
+
+
+
+
+
+
+
+
+
+}

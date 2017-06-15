@@ -21,14 +21,20 @@
 2. String
 
 	boolean equals(String str):
+
 	char	str.charAt(int index): get the character at the position specified by index in a string.
+
 	char[]	str.toCharArray(): convert a string to an array of characters.
-	w2:
+	
+	String  str.substring(int beginIndex, int endIndex): The substring begins at the specified beginIndex and extends to the char at index endIndex-1.
+														 Thus the length of the substring is endIndex-beginIndex.
+	
 
 
-3. Array
+3. Arrays
 	
 	String toString(Object[] a): Returns a string representation of the specified array.
+
 	String deepToString(Object[] a): Returns a string representation of the "deep contents" of the specified array.
 	w2:
 
@@ -40,7 +46,17 @@
 5. HashMap
 	
 	V put(key, value): Associate a specified value to a specified key in this map.
+
 	V get(Object key): Return the value which key is mapped to.
+
 	V getOrDefault(Value, default_value): search the given value, if it is not found, set a default value.
+
 	Collection<V> values():Return a set of all the values in HashMap.
 	w2:
+
+6. ArrayDeque
+
+	void push(E e) is equal to addFirst(E): it pushes an element onto the stack (in other words, at the head of this deque). It throws an IllegalStateException if no space is currently available.
+
+
+
