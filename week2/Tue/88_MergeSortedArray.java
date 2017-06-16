@@ -7,6 +7,9 @@ equal to m + n) to hold additional elements from nums2. The number of elements
 initialized in nums1 and nums2 are m and n respectively.
 */
 
+// Hints: From Tail to Head
+
+// Complexity: Time O(m+n), Space O(m+n)
 public class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         // Corner Case
@@ -34,3 +37,5 @@ public class Solution {
         return;
     }
 }
+
+// Followup: If array nums1's size is k, k < m + n. I want to merge nums1 and nums2 as a sorted array, but only keep the minimum numbers.
