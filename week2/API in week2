@@ -38,9 +38,11 @@
 	String deepToString(Object[] a): Returns a string representation of the "deep contents" of the specified array.
 	w2:
 
+	static void sort(Object[] a): Sorts the specified array of objects into asending order, according to the natural ordering of its elements.
+
 
 4. List
-
+	
 
 
 5. HashMap

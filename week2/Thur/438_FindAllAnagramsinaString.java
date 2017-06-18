@@ -47,7 +47,7 @@ public class Solution {
 	public List<Integer> findAnagrams(String s, String p) {
 		List<Integer> output = new ArrayList<>();
 		int slen = s.length();
-		
+
 		// Corner Case
         if(s == null || slen == 0 || p == null || plen == 0) {
             return output;
@@ -60,6 +60,16 @@ public class Solution {
 
         int left = 0, right = 0;
         int window = p.length();
+
+       	while (right < slen) {
+       		if (hash[s.charAt(right++)] -- >= 1) {
+       			window--;
+       		}
+
+       		if (window == 0) {
+       			output.add(left);
+       		}
+       	}
 
 	}
 }
