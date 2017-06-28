@@ -37,12 +37,16 @@
 
 	String deepToString(Object[] a): Returns a string representation of the "deep contents" of the specified array.
 	w2:
-
 	static void sort(Object[] a): Sorts the specified array of objects into asending order, according to the natural ordering of its elements.
 
 
+
+
 4. List
-	
+
+	int size(): Returns the number of elements in this list. The number is dynamic!
+	E   remove(int index)
+	boolean remove(Object o): remove the first occurrence of the specified element from this list if it is present and return true, or else return false.
 
 
 5. HashMap
@@ -51,10 +55,13 @@
 
 	V get(Object key): Return the value which key is mapped to.
 
-	V getOrDefault(Value, default_value): search the given value, if it is not found, set a default value.
+	V getOrDefault(Key, default_value): search the given value, if it is not found, set a default value.
 
 	Collection<V> values():Return a set of all the values in HashMap.
 	w2:
+	boolean containsKey(Object key): check whether a key is in the map.
+
+
 
 6. ArrayDeque
 

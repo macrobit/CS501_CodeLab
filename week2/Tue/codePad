@@ -1,0 +1,78 @@
+  public Node inOrderSuccessor(Node root, Node p) {
+    Node candi = null;
+    
+    // Base Case
+    if(root == null || p == null) {
+      return candi;
+    }
+    
+    while(root != null) {
+      if(p.val < root.val) {
+        candi = root;
+        root = root.left;
+      }else {
+        root = root.right;
+      }
+    }
+      return candi;
+  }
+  
+private static int count = 0;
+  
+public int kthSmallest(TreeNode root, int k) {
+  // Base Case
+  if(root == null) {
+    return Integer.MIN_VALUE;
+  }
+  
+  int count = k;
+  int output = 0;
+  help(root);
+  return 
+  
+}
+  public void help(TreeNode n) {
+    if (n.left != null) {
+      help(n.left);
+    }
+    
+    count--;
+    
+    if (count == 0) {
+      output = n.val;
+      return;
+    }
+    
+    if (n.right != null) {
+      help(n.right);
+    }
+  }
+  
+public boolean isSymmetric(TreeNode root) {
+  // Corner Case
+  if(root == null) {
+    return true;
+  }
+  
+  if(isSymmetricHelper(root.left, root.right) {
+    return true;
+  }else {
+    return false;
+  }
+  
+}
+//   漂酿！！！
+  
+private boolean isSymmetricHelper(TreeNode left, TreeNode right) {
+    if(left == null || right == null) {
+      return left == right;
+    }
+    if(left.val != right.val) {
+      return false;
+    }
+    if(isSymmetricHelper(left.left, right.right) && isSymmetricHelp(left.right, right.left)) {
+      return true;
+    }else {
+      return false;
+    }
+}

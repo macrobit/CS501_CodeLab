@@ -23,6 +23,7 @@ public class Solution {
         while (head != null) {
             next = head.next; // save head.next
             head.next = newHead; // change head.next
+            
             newHead = head;  // move newHead forward
             head = next; // move head foward
         }
