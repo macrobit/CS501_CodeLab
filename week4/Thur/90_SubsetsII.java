@@ -33,7 +33,8 @@ private void helper(List<List<Integers>> res, List<Integers> path, int nums, int
 	res.add(new ArrayList<Integers>(path));
 
 	for (int i = pos; i < nums.length; i++) {
-		if(i != 0 && nums[i] == nums[i-1]) {
+//		if(i != 0 && nums[i] == nums[i-1]) {
+		if (i != pos && nums[i] == nums[i-1]) {
 			continue;
 		}
 
