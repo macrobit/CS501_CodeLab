@@ -41,7 +41,7 @@ private void helper(List<List<Integer>> res, List<Integer> path, int[] nums, int
 
 	for(int i = pos; i < nums.length; i++) { // for循环语句用来广度遍历，并且i的初始值是动态的，只进不退
 		 path.add(nums[i]);
-		 helper(res, path, nums, i + 1); // 广度遍历改变的i值间接影响到深度遍历的初始值。
+		 helper(res, path, nums, i + 1); // 广度遍历改变的i值间接影响到深度遍历的初始值。i+1很重要，因为它决定了程序必然会终结在某个时刻。
 		 path.remove(path.size() - 1);
 	}
 	return;
