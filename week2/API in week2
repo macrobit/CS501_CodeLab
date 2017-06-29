@@ -28,6 +28,7 @@
 	
 	String  str.substring(int beginIndex, int endIndex): The substring begins at the specified beginIndex and extends to the char at index endIndex-1.
 														 Thus the length of the substring is endIndex-beginIndex.
+	String  str.valueOf(Object)
 	
 
 
@@ -47,6 +48,7 @@
 	int size(): Returns the number of elements in this list. The number is dynamic!
 	E   remove(int index)
 	boolean remove(Object o): remove the first occurrence of the specified element from this list if it is present and return true, or else return false.
+	String toString(): Returns a string representation of this collection. [1, 2, 3]
 
 
 5. HashMap
