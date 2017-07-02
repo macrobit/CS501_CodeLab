@@ -70,4 +70,13 @@
 	void push(E e) is equal to addFirst(E): it pushes an element onto the stack (in other words, at the head of this deque). It throws an IllegalStateException if no space is currently available.
 
 
+7. Integer
+	int Integer.parseInt(String s): convert a String to an integer.
+
+8. Math
+	double Math.random(): return a positive double value in range [0.0, 1.0]. It can be used to create a random number in range [0, n] like this:
+						int random = Math.random() * n+1;
+	
+
+
 
