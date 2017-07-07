@@ -30,7 +30,7 @@ public class Solution {
 		return newHead;
 	}
 
-// Recursive Method:
+// Recursion Method (Tail recursion):
 	public ListNode reverseHelp(ListNode head, ListNode newHead) {
 		// base case
 		if (head == null) {
@@ -40,7 +40,7 @@ public class Solution {
 		ListNode tmp = head.next;
 		head.next = newHead;
 
-		return reverseHelp(tmp, head);
+		return reverseHelp(tmp, head); // tail recursion
 
 	}
 
@@ -52,5 +52,21 @@ public class Solution {
 
 		ListNode newHead = null;
 		return reverseHelp (head, newHead);
+	}
+
+// Recursion Method (non-tail recursion):
+	public ListNode reverseLinkedListR(ListNode head) {
+		// corner case
+		if (head == null || head.next == null) {
+			return head;
+		}
+		// next level
+		ListNode newHead = return reverseLinkedListR(head.next);
+		// current level
+		head.next.next = head;
+		head.next = null;
+
+		return newHead; // every newHead returned is the same!
+
 	}
 }
