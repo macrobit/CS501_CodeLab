@@ -54,6 +54,16 @@ public class Solution {
 			res.add(newLevel);
 		}
 
+		List<Integer> element = res.get(level);
+
+		if (level % 2 == 0) {
+			element.add(curr.val);
+		} else {
+			element.add(0, curr.val);
+		}
+
+		helper(res, curr.left, level+1);
+		helper(res, curr.right, level+1);
 
 	}
 

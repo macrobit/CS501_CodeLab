@@ -10,6 +10,7 @@ Given [5, 7, 7, 8, 8, 10] and target value 8,
 return [3, 4].
 */
 
+// Method 1: two passes
 public int[] searchRange(int[] nums, int target) {
 	int[] res = {-1, -1};
 	// corner case
@@ -37,9 +38,9 @@ public int[] searchRange(int[] nums, int target) {
 	// Find the right bound
 	end = nums.length - 1;
 	while (start < end) {
-		int mid = start + (end - start)/2 + 1; // must plus 1.
+		int mid = start + (end - start)/2 + 1; // must plus 1. Why? If you want to find right bound, you want a mid as right as possible
 		if (nums[mid] > target) {
-			end = mid - 1;
+			end = mid - 1; // Only when nums[mid] > target, the end would be smaller
 		} else {
 			start = mid;
 		}
@@ -47,5 +48,55 @@ public int[] searchRange(int[] nums, int target) {
 
 	res[1] = end;
 	return res;
+
+}
+
+// Method 2: one pass (recursion)
+public int[] searchRange(int[] nums, int target) {
+	// corner case:
+	if (nums == null || nums.length == 0) {
+		return new int[] {-1, -1};
+	}
+	// Initialization
+	int[] res = {nums.length, -1};
+	// A helper method is usually for recursion
+	helper(nums, target, 0, nums.length-1, res);
+	return res[0] <= res[1] ? res : new int[] {-1, -1};
+}
+
+public void helper(int[] nums, int target, int start, int end, int[] res) {
+	// corner case
+	if (start > end) {
+		return;
+	}
+	int mid = start + (end - start)/2;
+	if(nums[mid] < target){
+		helper(nums, target, mid+1, end, res);
+	} else if(nums[mid] > target) {
+		helper(nums, target, start, mid-1, res);
+	} else {
+		if(mid < res[0]) {
+			res[0] = mid;
+			helper(nums, target, start, mid-1, res); //??
+		}
+		if(mid > res[1]) {
+			res[1] = mid;
+			helper(nums, target, mid+1, end, res);  //??
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
