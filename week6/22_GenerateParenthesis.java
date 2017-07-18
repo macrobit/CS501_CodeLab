@@ -19,6 +19,7 @@ public List<String> generateParenthesis(int n) {
 private void helper(List<String> res, String str, int n, int counter) { // What is this counter?
 // End case: all "(" have been paired, and there are n pairs.
 	if(counter == 0 && str.length() == 2 * n) {
+		res.add(new String(str));
 		return;
 	}
 // corner case: all invalid situations
@@ -29,10 +30,12 @@ private void helper(List<String> res, String str, int n, int counter) { // What 
 	if(counter > 0 && counter < n) {
 		helper(res, str + "(", n, counter + 1);
 		helper(res, str + ")", n, counter - 1);
-	} else if(counter == 0) { // All "(" have been paired
-		helper(res, str + "(", n , counter + 1);
-	} else if {
+	} else if(counter == 0) { // All "(" have been paired or just began
+		helper(res, str + "(", n, counter + 1);
+	} else { // counter == n
 		helper(res, str + ")", n, counter - 1);
 	}
 	return;
 }
+
+
