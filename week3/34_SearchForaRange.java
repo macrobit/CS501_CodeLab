@@ -74,7 +74,7 @@ public void helper(int[] nums, int target, int start, int end, int[] res) {
 		helper(nums, target, mid+1, end, res);
 	} else if(nums[mid] > target) {
 		helper(nums, target, start, mid-1, res);
-	} else {
+	} else { // nums[mid] == target
 		if(mid < res[0]) {
 			res[0] = mid;
 			helper(nums, target, start, mid-1, res); //??

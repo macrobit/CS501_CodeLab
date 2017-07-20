@@ -49,9 +49,26 @@ public boolean canWinNim(int n) {
 
 //Method 3: DFS Recurssion Top-down
 public boolean canWinNim(int n) {
-	//corner case
-	if (n <= 0) {
-		return
+	return helper(n, new HashMap<>()); //use a HashMap to save the information about whether a number of stones can make player win
+}
+public boolean helper(int n, Map<Integer, boolean> map) {
+	//corner cases
+	if(n <= 0) {
+		return false;
 	}
+	// if(n <= 3 && n >= 1) {
+	// 	return true;
+	// }
+	// Hit memoization table
+	if(map.contiansKey(n)) {
+		return map.get(n);
+	}
+	// create a base variable to do multiple logic and operations
+	boolean canNextWin = true;
+	for(int i = 1; i <= 3; i++) {
+		canNextWin &= helper(n-i, map);
+	}
+	map.put(n,!canNextWin);
+	return !canNextWin;
 }
 
