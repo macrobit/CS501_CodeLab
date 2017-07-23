@@ -41,6 +41,13 @@ public void gameOfLife(int[][] board) {
 	}
 }
 
-private helper(int[][] board, int i, int j) {
-
+private int helper(int[][] board, int row, int col, int i, int j) {
+	int live = 0;
+	for (int x = Math.max(i - 1, 0); x <= Math.min(i + 1, row - 1)) {
+		for (int y = Math.max(j - 1, 0); y <= Math.min(j + 1, col - 1)) {
+			live += board[x][y];
+		}
+	}
+	live -= board[i][j]; // delete itself.
+	return live;
 }
