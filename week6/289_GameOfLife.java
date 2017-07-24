@@ -28,15 +28,20 @@ public void gameOfLife(int[][] board) {
 
 	for (int i = 0; i < board.length; i++) {
 		for (int j = 0; j < board[0].length; j++) {
-			int live = helper(board, i, j);
+			int live = helper(board, row, col, i, j);
 
 			if (board[i][j] == 1 && live >= 2 && live <= 3) {
-				board[i][j] = 1;
-			} else if (board[i][j] == 0 && live == 3) {
-				board[i][j] = 1;
-			} else (live < 2 || live > 3) {
-				board[i][j] = 0;
-			}
+				board[i][j] = 3;
+			} 
+			if (board[i][j] == 0 && live == 3) {
+				board[i][j] = 2;
+			} 
+		}
+	}
+
+	for (int i = 0; i < row; i++) {
+		for (int j = 0; j < col; j++) {
+			board[i][j] >>= 1;
 		}
 	}
 }
@@ -45,9 +50,9 @@ private int helper(int[][] board, int row, int col, int i, int j) {
 	int live = 0;
 	for (int x = Math.max(i - 1, 0); x <= Math.min(i + 1, row - 1)) {
 		for (int y = Math.max(j - 1, 0); y <= Math.min(j + 1, col - 1)) {
-			live += board[x][y];
+			live += board[x][y] & 1;
 		}
 	}
-	live -= board[i][j]; // delete itself.
+	live -= board[i][j] & 1; // delete itself.
 	return live;
 }
