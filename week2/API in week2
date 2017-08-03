@@ -40,6 +40,10 @@
 	w2:
 	static void sort(Object[] a): Sorts the specified array of objects into asending order, according to the natural ordering of its elements.
 
+	public static void fill(int[] a, int fromIndex, int toIndex, int val): fromIndex is inclusive, toIndex is exclusive.
+
+	
+
 
 
 
@@ -49,7 +53,14 @@
 	E   remove(int index)
 	boolean remove(Object o): remove the first occurrence of the specified element from this list if it is present and return true, or else return false.
 	String toString(): Returns a string representation of this collection. [1, 2, 3]
-
+	add(Object elem)
+	remove(int index)
+	remove(Object elem)
+	contains(Object elem)
+	isEmpty()
+	indexOf(Object elem)
+	size()
+	get(int index)
 
 5. HashMap
 	
@@ -73,10 +84,14 @@
 7. Integer
 	int Integer.parseInt(String s): convert a String to an integer.
 
+
 8. Math
 	double Math.random(): return a positive double value in range [0.0, 1.0]. It can be used to create a random number in range [0, n] like this:
-						int random = Math.random() * n+1;
-	
+						int random = (int)Math.random() * n+1;
+
+
+
+
 
 
 

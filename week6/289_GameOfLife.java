@@ -17,6 +17,7 @@
 // problems when the active area encroaches the border of the array. How would
 // you address these problems?
 
+// Method 1: in place
 public void gameOfLife(int[][] board) {
 	//corner case
 	if (board == null || board.length == 0){
@@ -56,3 +57,5 @@ private int helper(int[][] board, int row, int col, int i, int j) {
 	live -= board[i][j] & 1; // delete itself.
 	return live;
 }
+
+// Method 2: no in place

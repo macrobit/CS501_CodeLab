@@ -35,7 +35,7 @@ private void helper(List<String> res, String str, int n, int counter) { // What 
 	} else { // counter == n
 		helper(res, str + ")", n, counter - 1);
 	}
-	return;
+	return; // If there is a return that appears in a path, this path will not appear in the result.
 }
 
 
